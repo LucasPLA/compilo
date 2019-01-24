@@ -1,0 +1,40 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules main.ml > main.ml.depends # cached
+# Target: ast.ml.depends, tags: { extension:ml, file:ast.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules ast.ml > ast.ml.depends # cached
+# Target: type.ml.depends, tags: { extension:ml, file:type.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules type.ml > type.ml.depends # cached
+# Target: type.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:type.cmo, file:type.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o type.cmo type.ml # cached
+# Target: ast.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:ast.cmo, file:ast.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o ast.cmo ast.ml # cached
+# Target: lexer.ml.depends, tags: { extension:ml, file:lexer.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules lexer.ml > lexer.ml.depends # cached
+# Target: parser.ml.depends, tags: { extension:ml, file:parser.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules parser.ml > parser.ml.depends
+# Target: parser.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:parser.cmo, file:parser.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o parser.cmo parser.ml
++ /usr/bin/ocamlc -c -o parser.cmo parser.ml
+File "parser.ml", line 172, characters 11-41:
+Warning 26: unused variable tokens.
+# Target: lexer.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:lexer.cmo, file:lexer.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o lexer.cmo lexer.ml # cached
+# Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o main.cmo main.ml # cached
+# Target: type.cmx, tags: { compile, extension:cmx, extension:ml, file:type.cmx, file:type.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o type.cmx type.ml # cached
+# Target: ast.cmx, tags: { compile, extension:cmx, extension:ml, file:ast.cmx, file:ast.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o ast.cmx ast.ml # cached
+# Target: parser.cmx, tags: { compile, extension:cmx, extension:ml, file:parser.cmx, file:parser.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o parser.cmx parser.ml
++ /usr/bin/ocamlopt -c -o parser.cmx parser.ml
+File "parser.ml", line 172, characters 11-41:
+Warning 26: unused variable tokens.
+# Target: lexer.cmx, tags: { compile, extension:cmx, extension:ml, file:lexer.cmx, file:lexer.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o lexer.cmx lexer.ml # cached
+# Target: main.cmx, tags: { compile, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o main.cmx main.ml # cached
+# Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet }
+/usr/bin/ocamlopt type.cmx ast.cmx parser.cmx lexer.cmx main.cmx -o main.native
+# Compilation successful.
