@@ -1,0 +1,136 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules main.ml > main.ml.depends # cached
+# Target: error.ml.depends, tags: { extension:ml, file:error.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules error.ml > error.ml.depends # cached
+# Target: error.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:error.cmo, file:error.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o error.cmo error.ml # cached
+# Target: lexer.mll, tags: { extension:mll, file:lexer.mll, lexer, ocaml, ocamllex, quiet }
+/usr/bin/ocamllex -q lexer.mll
+# Target: lexer.ml.depends, tags: { extension:ml, file:lexer.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules lexer.ml > lexer.ml.depends
+# Target: location.ml.depends, tags: { extension:ml, file:location.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules location.ml > location.ml.depends # cached
+# Target: location.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:location.cmo, file:location.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o location.cmo location.ml # cached
+# Target: parser.mly.depends, tags: { extension:mly, file:parser.mly, infer, menhir_ocamldep, ocaml, ocamldep, quiet }
+menhir --explain --dump --raw-depend --ocamldep '/usr/bin/ocamldep -modules' parser.mly > parser.mly.depends
++ menhir --explain --dump --raw-depend --ocamldep '/usr/bin/ocamldep -modules' parser.mly > parser.mly.depends
+File "parser.mly", line 6, characters 14-24:
+Warning: the token BOOL_CONST is unused.
+File "parser.mly", line 18, characters 16-19:
+Warning: the token DOT is unused.
+File "parser.mly", line 20, characters 10-14:
+Warning: the token ELSE is unused.
+File "parser.mly", line 20, characters 7-9:
+Warning: the token IF is unused.
+File "parser.mly", line 18, characters 20-26:
+Warning: the token LENGTH is unused.
+File "parser.mly", line 18, characters 12-15:
+Warning: the token NEW is unused.
+File "parser.mly", line 10, characters 31-34:
+Warning: the token NOT is unused.
+File "parser.mly", line 18, characters 7-11:
+Warning: the token THIS is unused.
+File "parser.mly", line 20, characters 15-20:
+Warning: the token WHILE is unused.
+# Target: LMJ.mli.depends, tags: { extension:mli, file:LMJ.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules LMJ.mli > LMJ.mli.depends # cached
+# Target: LMJ.cmi, tags: { byte, compile, extension:mli, file:LMJ.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc -c -o LMJ.cmi LMJ.mli # cached
+# Target: parser.mly, tags: { byte, compile, extension:ml, extension:mly, file:parser.ml, file:parser.mly, infer, menhir, ocaml, parser, quiet }
+menhir --explain --dump --ocamlc /usr/bin/ocamlc --infer parser.mly
++ menhir --explain --dump --ocamlc /usr/bin/ocamlc --infer parser.mly
+File "parser.mly", line 6, characters 14-24:
+Warning: the token BOOL_CONST is unused.
+File "parser.mly", line 18, characters 16-19:
+Warning: the token DOT is unused.
+File "parser.mly", line 20, characters 10-14:
+Warning: the token ELSE is unused.
+File "parser.mly", line 20, characters 7-9:
+Warning: the token IF is unused.
+File "parser.mly", line 18, characters 20-26:
+Warning: the token LENGTH is unused.
+File "parser.mly", line 18, characters 12-15:
+Warning: the token NEW is unused.
+File "parser.mly", line 10, characters 31-34:
+Warning: the token NOT is unused.
+File "parser.mly", line 18, characters 7-11:
+Warning: the token THIS is unused.
+File "parser.mly", line 20, characters 15-20:
+Warning: the token WHILE is unused.
+Warning: 2 states have shift/reduce conflicts.
+Warning: 2 shift/reduce conflicts were arbitrarily resolved.
+# Target: parser.mli.depends, tags: { extension:mli, file:parser.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules parser.mli > parser.mli.depends # cached
+# Target: parser.cmi, tags: { byte, compile, extension:mli, file:parser.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc -c -o parser.cmi parser.mli # cached
+# Target: lmj2mj.ml.depends, tags: { extension:ml, file:lmj2mj.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules lmj2mj.ml > lmj2mj.ml.depends # cached
+# Target: MJ.mli.depends, tags: { extension:mli, file:MJ.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules MJ.mli > MJ.mli.depends # cached
+# Target: stringMap.mli.depends, tags: { extension:mli, file:stringMap.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules stringMap.mli > stringMap.mli.depends # cached
+# Target: stringSet.mli.depends, tags: { extension:mli, file:stringSet.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules stringSet.mli > stringSet.mli.depends # cached
+# Target: stringSet.cmi, tags: { byte, compile, extension:mli, file:stringSet.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc -c -o stringSet.cmi stringSet.mli # cached
+# Target: stringMap.cmi, tags: { byte, compile, extension:mli, file:stringMap.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc -c -o stringMap.cmi stringMap.mli # cached
+# Target: MJ.cmi, tags: { byte, compile, extension:mli, file:MJ.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc -c -o MJ.cmi MJ.mli # cached
+# Target: lmj2mj.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:lmj2mj.cmo, file:lmj2mj.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o lmj2mj.cmo lmj2mj.ml # cached
+# Target: mj2c.ml.depends, tags: { extension:ml, file:mj2c.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules mj2c.ml > mj2c.ml.depends # cached
+# Target: mj2c.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:mj2c.cmo, file:mj2c.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o mj2c.cmo mj2c.ml # cached
+# Target: printMJ.ml.depends, tags: { extension:ml, file:printMJ.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules printMJ.ml > printMJ.ml.depends # cached
+# Target: print.ml.depends, tags: { extension:ml, file:print.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules print.ml > print.ml.depends # cached
+# Target: print.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:print.cmo, file:print.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o print.cmo print.ml # cached
+# Target: printMJ.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:printMJ.cmo, file:printMJ.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o printMJ.cmo printMJ.ml # cached
+# Target: typechecking.ml.depends, tags: { extension:ml, file:typechecking.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules typechecking.ml > typechecking.ml.depends # cached
+# Target: typechecking.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:typechecking.cmo, file:typechecking.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o typechecking.cmo typechecking.ml # cached
+# Target: lexer.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:lexer.cmo, file:lexer.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o lexer.cmo lexer.ml
+# Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc -c -o main.cmo main.ml # cached
+# Target: error.cmx, tags: { compile, extension:cmx, extension:ml, file:error.cmx, file:error.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o error.cmx error.ml # cached
+# Target: location.cmx, tags: { compile, extension:cmx, extension:ml, file:location.cmx, file:location.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o location.cmx location.ml # cached
+# Target: parser.ml.depends, tags: { extension:ml, file:parser.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules parser.ml > parser.ml.depends
+# Target: parser.cmx, tags: { compile, extension:cmx, extension:ml, file:parser.cmx, file:parser.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o parser.cmx parser.ml
+# Target: stringMap.ml.depends, tags: { extension:ml, file:stringMap.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules stringMap.ml > stringMap.ml.depends # cached
+# Target: stringSet.ml.depends, tags: { extension:ml, file:stringSet.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules stringSet.ml > stringSet.ml.depends # cached
+# Target: stringSet.cmx, tags: { compile, extension:cmx, extension:ml, file:stringSet.cmx, file:stringSet.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o stringSet.cmx stringSet.ml # cached
+# Target: stringMap.cmx, tags: { compile, extension:cmx, extension:ml, file:stringMap.cmx, file:stringMap.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o stringMap.cmx stringMap.ml # cached
+# Target: lmj2mj.cmx, tags: { compile, extension:cmx, extension:ml, file:lmj2mj.cmx, file:lmj2mj.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o lmj2mj.cmx lmj2mj.ml # cached
+# Target: mj2c.cmx, tags: { compile, extension:cmx, extension:ml, file:mj2c.cmx, file:mj2c.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o mj2c.cmx mj2c.ml # cached
+# Target: print.cmx, tags: { compile, extension:cmx, extension:ml, file:print.cmx, file:print.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o print.cmx print.ml # cached
+# Target: printMJ.cmx, tags: { compile, extension:cmx, extension:ml, file:printMJ.cmx, file:printMJ.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o printMJ.cmx printMJ.ml # cached
+# Target: typechecking.cmx, tags: { compile, extension:cmx, extension:ml, file:typechecking.cmx, file:typechecking.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o typechecking.cmx typechecking.ml # cached
+# Target: lexer.cmx, tags: { compile, extension:cmx, extension:ml, file:lexer.cmx, file:lexer.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o lexer.cmx lexer.ml
+# Target: main.cmx, tags: { compile, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt -c -o main.cmx main.ml
+# Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet }
+/usr/bin/ocamlopt error.cmx location.cmx parser.cmx lexer.cmx stringSet.cmx stringMap.cmx lmj2mj.cmx mj2c.cmx print.cmx printMJ.cmx typechecking.cmx main.cmx -o main.native
+# Compilation successful.

@@ -1,0 +1,64 @@
+
+** Conflict (shift/reduce) in state 79.
+** Token involved: IDENT
+** This state is reached from program after reading:
+
+main_class CLASS IDENT LBRACE list(varDeclaration) PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+program 
+main_class list(classDeclaration) EOF 
+           classDeclaration list(classDeclaration) 
+           CLASS IDENT LBRACE list(varDeclaration) list(methodDeclaration) RBRACE 
+                                                   methodDeclaration list(methodDeclaration) 
+                                                   (?)
+
+** In state 79, looking ahead at IDENT, reducing production
+** list(varDeclaration) -> 
+** is permitted because of the following sub-derivation:
+
+PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE list(varDeclaration) list(statement) RETURN expression SEMICOLON RBRACE // lookahead token appears because list(statement) can begin with IDENT
+                                                                                       . 
+
+** In state 79, looking ahead at IDENT, shifting is permitted
+** because of the following sub-derivation:
+
+PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE list(varDeclaration) list(statement) RETURN expression SEMICOLON RBRACE 
+                                                                                       varDeclaration list(varDeclaration) 
+                                                                                       typ IDENT SEMICOLON 
+                                                                                       . IDENT 
+
+** Conflict (shift/reduce) in state 64.
+** Token involved: IDENT
+** This state is reached from program after reading:
+
+main_class CLASS IDENT LBRACE list(varDeclaration) PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE varDeclaration 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+program 
+main_class list(classDeclaration) EOF 
+           classDeclaration list(classDeclaration) 
+           CLASS IDENT LBRACE list(varDeclaration) list(methodDeclaration) RBRACE 
+                                                   methodDeclaration list(methodDeclaration) 
+                                                   (?)
+
+** In state 64, looking ahead at IDENT, reducing production
+** list(varDeclaration) -> 
+** is permitted because of the following sub-derivation:
+
+PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE list(varDeclaration) list(statement) RETURN expression SEMICOLON RBRACE // lookahead token appears because list(statement) can begin with IDENT
+                                                                                       varDeclaration list(varDeclaration) // lookahead token is inherited
+                                                                                                      . 
+
+** In state 64, looking ahead at IDENT, shifting is permitted
+** because of the following sub-derivation:
+
+PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE list(varDeclaration) list(statement) RETURN expression SEMICOLON RBRACE 
+                                                                                       varDeclaration list(varDeclaration) 
+                                                                                                      varDeclaration list(varDeclaration) 
+                                                                                                      typ IDENT SEMICOLON 
+                                                                                                      . IDENT 
