@@ -42,10 +42,15 @@ rule get_token = parse
   | "("       { LPAREN }
   | ")"       { RPAREN }
   | ";"       { SEMICOLON }
+  | "this"    { THIS }
+  | "if"      { IF }
+  | "else"    { ELSE }
+  | "while"   { WHILE }
   | "public"  { PUBLIC }
   | "static"  { STATIC }
   | "void"    { VOID }
   | "main"    { MAIN }
+  | "new"     { NEW }
   | "System.out.println" { SYSO }
   | "return"  { RETURN }
   | "extends" { EXTENDS }

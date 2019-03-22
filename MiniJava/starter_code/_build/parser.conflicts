@@ -1,9 +1,10 @@
 
-** Conflict (shift/reduce) in state 79.
-** Token involved: IDENT
+** Conflict (shift/reduce) in state 57.
+** Tokens involved: TIMES PLUS MINUS LT LBRACKET DOT AND
+** The following explanations concentrate on token TIMES.
 ** This state is reached from program after reading:
 
-main_class CLASS IDENT LBRACE list(varDeclaration) PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE 
+main_class CLASS IDENT LBRACE list(varDeclaration) PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE WHILE LPAREN NOT expression 
 
 ** The derivations that appear below have the following common factor:
 ** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
@@ -13,52 +14,24 @@ main_class list(classDeclaration) EOF
            classDeclaration list(classDeclaration) 
            CLASS IDENT LBRACE list(varDeclaration) list(methodDeclaration) RBRACE 
                                                    methodDeclaration list(methodDeclaration) 
-                                                   (?)
+                                                   PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE statAux RETURN expression SEMICOLON RBRACE 
+                                                                                                                                          list(statement) 
+                                                                                                                                          statement list(statement) 
+                                                                                                                                          WHILE LPAREN expression RPAREN statement 
+                                                                                                                                                       raw_expression 
+                                                                                                                                                       (?)
 
-** In state 79, looking ahead at IDENT, reducing production
-** list(varDeclaration) -> 
-** is permitted because of the following sub-derivation:
-
-PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE list(varDeclaration) list(statement) RETURN expression SEMICOLON RBRACE // lookahead token appears because list(statement) can begin with IDENT
-                                                                                       . 
-
-** In state 79, looking ahead at IDENT, shifting is permitted
+** In state 57, looking ahead at TIMES, shifting is permitted
 ** because of the following sub-derivation:
 
-PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE list(varDeclaration) list(statement) RETURN expression SEMICOLON RBRACE 
-                                                                                       varDeclaration list(varDeclaration) 
-                                                                                       typ IDENT SEMICOLON 
-                                                                                       . IDENT 
+NOT expression 
+    raw_expression 
+    expression . TIMES expression 
 
-** Conflict (shift/reduce) in state 64.
-** Token involved: IDENT
-** This state is reached from program after reading:
-
-main_class CLASS IDENT LBRACE list(varDeclaration) PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE varDeclaration 
-
-** The derivations that appear below have the following common factor:
-** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
-
-program 
-main_class list(classDeclaration) EOF 
-           classDeclaration list(classDeclaration) 
-           CLASS IDENT LBRACE list(varDeclaration) list(methodDeclaration) RBRACE 
-                                                   methodDeclaration list(methodDeclaration) 
-                                                   (?)
-
-** In state 64, looking ahead at IDENT, reducing production
-** list(varDeclaration) -> 
+** In state 57, looking ahead at TIMES, reducing production
+** raw_expression -> NOT expression 
 ** is permitted because of the following sub-derivation:
 
-PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE list(varDeclaration) list(statement) RETURN expression SEMICOLON RBRACE // lookahead token appears because list(statement) can begin with IDENT
-                                                                                       varDeclaration list(varDeclaration) // lookahead token is inherited
-                                                                                                      . 
-
-** In state 64, looking ahead at IDENT, shifting is permitted
-** because of the following sub-derivation:
-
-PUBLIC typ IDENT LPAREN loption(separated_nonempty_list(COMMA,argument)) RPAREN LBRACE list(varDeclaration) list(statement) RETURN expression SEMICOLON RBRACE 
-                                                                                       varDeclaration list(varDeclaration) 
-                                                                                                      varDeclaration list(varDeclaration) 
-                                                                                                      typ IDENT SEMICOLON 
-                                                                                                      . IDENT 
+expression TIMES expression // lookahead token appears
+raw_expression // lookahead token is inherited
+NOT expression . 
