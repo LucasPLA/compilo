@@ -10,3 +10,11 @@ class Kermit {
                 System.out.println(1 + 3);
     }}
 }
+
+class Fozzy {
+    kktoes qqch;
+    public int carre(int n) {
+        qqch = new kktoes();
+        return n;
+    }
+}

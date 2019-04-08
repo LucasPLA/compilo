@@ -60,7 +60,7 @@ menhir --explain --dump --ocamlc /usr/bin/ocamlc --infer parser.mly # cached
 # Target: typechecking.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:typechecking.cmo, file:typechecking.ml, implem, ocaml, quiet }
 /usr/bin/ocamlc -c -o typechecking.cmo typechecking.ml
 # Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet }
-/usr/bin/ocamlc -c -o main.cmo main.ml
+/usr/bin/ocamlc -c -o main.cmo main.ml # cached
 # Target: error.cmx, tags: { compile, extension:cmx, extension:ml, file:error.cmx, file:error.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o error.cmx error.ml # cached
 # Target: location.cmx, tags: { compile, extension:cmx, extension:ml, file:location.cmx, file:location.ml, implem, native, ocaml, quiet }
@@ -90,7 +90,7 @@ menhir --explain --dump --ocamlc /usr/bin/ocamlc --infer parser.mly # cached
 # Target: typechecking.cmx, tags: { compile, extension:cmx, extension:ml, file:typechecking.cmx, file:typechecking.ml, implem, native, ocaml, quiet }
 /usr/bin/ocamlopt -c -o typechecking.cmx typechecking.ml
 # Target: main.cmx, tags: { compile, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet }
-/usr/bin/ocamlopt -c -o main.cmx main.ml
+/usr/bin/ocamlopt -c -o main.cmx main.ml # cached
 # Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet }
 /usr/bin/ocamlopt error.cmx location.cmx parser.cmx lexer.cmx stringSet.cmx stringMap.cmx lmj2mj.cmx mj2c.cmx print.cmx printMJ.cmx typechecking.cmx main.cmx -o main.native
 # Compilation successful.
